@@ -63,13 +63,15 @@
 </template>
 
 <script>
+import { Vue, Component } from 'vue-property-decorator'
 import Logo from '~/components/Logo.vue'
 import VuetifyLogo from '~/components/VuetifyLogo.vue'
 
-export default {
+@Component({
   components: {
     Logo,
     VuetifyLogo
   }
-}
+})
+export default class Index extends Vue {}
 </script>
