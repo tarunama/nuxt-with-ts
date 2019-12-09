@@ -72,8 +72,8 @@ export default class Default extends Vue {
     },
     {
       icon: 'mdi-chart-bubble',
-      title: 'register',
-      to: '/register'
+      title: 'Register',
+      to: '/user/register'
     }
   ]
 }
