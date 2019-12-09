@@ -45,7 +45,7 @@ module.exports = {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: ['@nuxtjs/axios', '@nuxtjs/auth'],
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
@@ -75,5 +75,31 @@ module.exports = {
      ** You can extend webpack config here
      */
     // extend(config, ctx) {}
+  },
+  axios: {
+    host: 'localhost',
+    port: 3000
+  },
+  /*
+   ** Oauth Configuration
+   */
+  auth: {
+    redirect: {
+      login: '/',
+      logout: '/',
+      callback: '/callback',
+      home: '/'
+    },
+    strategies: {
+      local: {
+        endpoints: {
+          login: { propertyName: 'token.accessToken' }
+        }
+      },
+      github: {
+        client_id: process.env.GITHUB_CLIENT_ID,
+        client_secret: process.env.GITHUB_CLIENT_SECRET
+      }
+    }
   }
 }
